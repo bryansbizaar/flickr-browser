@@ -9,7 +9,7 @@ pytest-cov>=4.1.0
 pytest-mock>=3.11.0
 
 # For temporary files and directories in tests
-pytest-tmp-path>=0.2.0
+# Note: tmp_path fixture is built into pytest - no external package needed
 
 # Code quality tools (optional but recommended)
 flake8>=6.0.0
