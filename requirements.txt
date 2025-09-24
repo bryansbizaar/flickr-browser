@@ -1,0 +1,9 @@
+# Flickr Local Browser - Python Dependencies
+requests>=2.31.0
+flask>=2.3.0
+# Note: sqlite3 is built into Python
+
+# Excel Export Dependencies
+openpyxl>=3.1.0
+Pillow>=10.0.0
+pandas>=2.0.0

@@ -1,0 +1,41 @@
+📋 FLICKR LOCAL BROWSER - USAGE GUIDE
+===============================================
+
+🎮 PORTFOLIO DEMO (Recommended for viewing this project):
+----------------------------------------------------------
+git clone https://github.com/your-username/flickr-local-browser
+cd flickr-local-browser
+python3 setup_portfolio_demo.py
+python3 PORTFOLIO_LAUNCHER.py
+
+🚀 PRODUCTION VERSION (For real Flickr data):
+----------------------------------------------
+FIRST TIME SETUP:
+1. cd flickr-local-browser
+2. python3 -m venv venv
+3. source venv/bin/activate
+4. pip install -r requirements.txt
+5. python3 START_FLICKR_BROWSER.py
+6. Enter your Flickr API credentials in browser
+
+EVERY TIME AFTER:
+1. cd flickr-local-browser
+2. source venv/bin/activate  
+3. python3 START_FLICKR_BROWSER.py
+
+🛑 TO STOP:
+-----------
+• Press Ctrl+C in Terminal
+• Type: exit
+
+⚠️ IMPORTANT:
+--------------
+• Keep Terminal open while using the app
+• Don't close Terminal until done browsing
+• If Terminal closes, just restart with steps above
+
+🎯 QUICK START (Portfolio Demo):
+--------------------------------
+python3 PORTFOLIO_LAUNCHER.py
+
+That's it! Browser opens automatically with demo data.
