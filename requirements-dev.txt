@@ -1,0 +1,19 @@
+# Development Dependencies for Testing
+# Install with: pip install -r requirements-dev.txt
+
+# Testing framework
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# For mocking external services (Flickr API)
+pytest-mock>=3.11.0
+
+# For temporary files and directories in tests
+pytest-tmp-path>=0.2.0
+
+# Code quality tools (optional but recommended)
+flake8>=6.0.0
+black>=23.0.0
+
+# Include main app dependencies
+-r requirements.txt
