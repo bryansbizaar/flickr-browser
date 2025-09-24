@@ -70,11 +70,11 @@ def get_demo_stats():
         print(f"Error getting demo stats: {e}")
         return None
 
-class DemoLauncher:
+class PortfolioLauncher:
     def __init__(self):
         self.browser_running = False
 
-launcher = DemoLauncher()
+launcher = PortfolioLauncher()
 
 # HTML Template for the demo
 DEMO_HTML = """
@@ -247,7 +247,7 @@ DEMO_HTML = """
 <body>
     <div class="container">
         <h1>📸 Flickr Local Browser</h1>
-        <div class="demo-badge">DEMO</div>
+        <div class="demo-badge"> DEMO</div>
         <p class="subtitle">Interactive Photo Management & Search Application</p>
         
         {% if stats %}
@@ -309,7 +309,7 @@ DEMO_HTML = """
             <h3>⚠️ Demo Data Not Found</h3>
             <p>The demo data hasn't been generated yet. To set up the demo:</p>
             <ol>
-                <li>Run: <code>python3 setup_demo.py</code></li>
+                <li>Run: <code>python3 setup_portfolio_demo.py</code></li>
                 <li>Wait for photo generation to complete</li>
                 <li>Restart this launcher</li>
             </ol>
@@ -389,7 +389,7 @@ def index():
 def open_browser():
     try:
         if not has_demo_data():
-            return jsonify({"success": False, "message": "❌ Demo data not found. Please run setup_demo.py first."})
+            return jsonify({"success": False, "message": "❌ Demo data not found. Please run setup_portfolio_demo.py first."})
         
         if not launcher.browser_running:
             # Start the photo browser server
@@ -434,7 +434,7 @@ if __name__ == "__main__":
         # Open the demo in browser
         threading.Timer(1.0, lambda: webbrowser.open("http://127.0.0.1:9000")).start()
     else:
-        print("⚠️ No demo data found. Please run: python3 setup_demo.py")
+        print("⚠️ No demo data found. Please run: python3 setup_portfolio_demo.py")
         print("🌐 Opening setup interface at: http://127.0.0.1:9000")
         threading.Timer(1.0, lambda: webbrowser.open("http://127.0.0.1:9000")).start()
     
