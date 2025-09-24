@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Portfolio Demo Launcher for Flickr Local Browser
+Demo Launcher for Flickr Local Browser
 Automatically detects demo data and goes straight to photo browser
 """
 
@@ -70,18 +70,18 @@ def get_demo_stats():
         print(f"Error getting demo stats: {e}")
         return None
 
-class PortfolioLauncher:
+class DemoLauncher:
     def __init__(self):
         self.browser_running = False
 
-launcher = PortfolioLauncher()
+launcher = DemoLauncher()
 
-# HTML Template for the portfolio demo
+# HTML Template for the demo
 DEMO_HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flickr Local Browser - Portfolio Demo</title>
+    <title>Flickr Local Browser - Demo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -120,6 +120,11 @@ DEMO_HTML = """
             font-weight: bold;
             margin-bottom: 30px;
             font-size: 0.9rem;
+            text-align: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
         .stats-grid {
             display: grid;
@@ -242,7 +247,7 @@ DEMO_HTML = """
 <body>
     <div class="container">
         <h1>📸 Flickr Local Browser</h1>
-        <div class="demo-badge">PORTFOLIO DEMO</div>
+        <div class="demo-badge">DEMO</div>
         <p class="subtitle">Interactive Photo Management & Search Application</p>
         
         {% if stats %}
@@ -263,7 +268,7 @@ DEMO_HTML = """
         
         <div class="demo-info">
             <h3>🎮 Demo Features</h3>
-            <p>This portfolio demo showcases a complete photo management application with:</p>
+            <p>This demo showcases a complete photo management application with:</p>
             <ul class="feature-list">
                 <li>Album-based photo organization</li>
                 <li>Advanced search by title, tags, and descriptions</li>
@@ -302,9 +307,9 @@ DEMO_HTML = """
         {% else %}
         <div class="demo-info">
             <h3>⚠️ Demo Data Not Found</h3>
-            <p>The demo data hasn't been generated yet. To set up the portfolio demo:</p>
+            <p>The demo data hasn't been generated yet. To set up the demo:</p>
             <ol>
-                <li>Run: <code>python3 setup_portfolio_demo.py</code></li>
+                <li>Run: <code>python3 setup_demo.py</code></li>
                 <li>Wait for photo generation to complete</li>
                 <li>Restart this launcher</li>
             </ol>
@@ -315,7 +320,7 @@ DEMO_HTML = """
         
         <div style="text-align: center; margin-top: 30px;">
             <a href="#" onclick="showTechnicalDetails()" class="btn-secondary">📋 Technical Details</a>
-            <a href="https://github.com/your-username/flickr-local-browser" class="btn-secondary">🔗 View on GitHub</a>
+            <a href="https://github.com/bryansbizaar/flickr-browser" class="btn-secondary">🔗 View on GitHub</a>
         </div>
     </div>
 
@@ -384,7 +389,7 @@ def index():
 def open_browser():
     try:
         if not has_demo_data():
-            return jsonify({"success": False, "message": "❌ Demo data not found. Please run setup_portfolio_demo.py first."})
+            return jsonify({"success": False, "message": "❌ Demo data not found. Please run setup_demo.py first."})
         
         if not launcher.browser_running:
             # Start the photo browser server
@@ -419,17 +424,17 @@ def open_browser():
         return jsonify({"success": False, "message": f"❌ Error starting browser: {e}"})
 
 if __name__ == "__main__":
-    print("=== Flickr Local Browser - Portfolio Demo ===")
+    print("=== Flickr Local Browser - Demo ===")
     
     if has_demo_data():
         stats = get_demo_stats()
         print(f"✅ Demo data found: {stats['albums']} albums, {stats['photos']} photos")
-        print("🌐 Opening portfolio demo at: http://127.0.0.1:9000")
+        print("🌐 Opening demo at: http://127.0.0.1:9000")
         
         # Open the demo in browser
         threading.Timer(1.0, lambda: webbrowser.open("http://127.0.0.1:9000")).start()
     else:
-        print("⚠️ No demo data found. Please run: python3 setup_portfolio_demo.py")
+        print("⚠️ No demo data found. Please run: python3 setup_demo.py")
         print("🌐 Opening setup interface at: http://127.0.0.1:9000")
         threading.Timer(1.0, lambda: webbrowser.open("http://127.0.0.1:9000")).start()
     

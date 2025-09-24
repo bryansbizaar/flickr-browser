@@ -4,6 +4,17 @@ A complete desktop application for downloading and browsing Flickr photo collect
 
 > **Note**: This is a portfolio demonstration version of a custom application originally built for a private client. Personal data has been replaced with realistic demo content to showcase the technical implementation and user experience.
 
+## 📷 Screenshots
+
+![Landing Page](screenshots/landing-page.png)
+_Demo launcher with statistics overview_
+
+![Photo Browser Interface](screenshots/photo-browser.png)
+_Main photo browsing interface with album navigation_
+
+![Photo Details](screenshots/metadata.png)
+_Photo detail view showing comprehensive metadata including titles, tags, descriptions, and EXIF data_
+
 ## 🧪 **Professional Testing Suite**
 
 This project includes comprehensive testing demonstrating professional software engineering practices:
@@ -14,6 +25,7 @@ python run_tests.py
 ```
 
 **Key Testing Features:**
+
 - ✅ Database operations testing (many-to-many photo-album relationships)
 - ✅ REST API endpoint validation
 - ✅ Demo data generation quality assurance
@@ -44,12 +56,14 @@ The demo will automatically:
 ### First Time Setup (Portfolio Demo)
 
 1. **Clone & Navigate**
+
    ```bash
    git clone https://github.com/your-username/flickr-local-browser
    cd flickr-local-browser
    ```
 
 2. **Setup Demo Environment**
+
    ```bash
    python3 setup_portfolio_demo.py
    ```
@@ -65,10 +79,12 @@ The demo will automatically:
 For integration with actual Flickr account (requires API keys):
 
 1. **Get Flickr API Credentials**
+
    - Visit [Flickr App Garden](https://www.flickr.com/services/apps/create/)
    - Create new app and get API Key + Secret
 
 2. **Run Live Downloader**
+
    ```bash
    python3 START_FLICKR_BROWSER.py
    ```
@@ -80,18 +96,21 @@ For integration with actual Flickr account (requires API keys):
 ## 🏗️ Technical Architecture
 
 **Backend (Python)**
+
 - OAuth Authentication for private album access
 - SQLite database with advanced many-to-many relationships
 - Flask REST API with comprehensive endpoints
 - Incremental update system for new photos
 
-**Frontend (JavaScript/HTML/CSS)**  
+**Frontend (JavaScript/HTML/CSS)**
+
 - Responsive photo grid interface
 - Real-time search across titles/descriptions/tags
 - Album filtering and navigation
 - Modal photo detail views with metadata
 
 **Key Technical Achievement: Database Design**
+
 ```sql
 -- Advanced many-to-many photo-album relationships
 CREATE TABLE photo_albums (
@@ -104,6 +123,7 @@ CREATE TABLE photo_albums (
 ```
 
 This junction table design enables:
+
 - Photos in multiple albums simultaneously
 - Accurate album photo counts from relationships
 - Efficient search across complex associations
@@ -112,18 +132,21 @@ This junction table design enables:
 ## 🔍 Key Features
 
 ### Advanced Search & Filtering
+
 - **Multi-field Search** - Across titles, descriptions, and tags simultaneously
 - **Case-Insensitive Matching** - User-friendly search behavior
 - **Album Filtering** - View photos from specific albums
 - **Real-time Results** - Search results update immediately
 
 ### Database Management
+
 - **Complex Relationship Modeling** - Many-to-many photo-album associations
 - **Data Integrity** - Foreign key constraints and transaction safety
 - **Query Optimization** - Efficient JOIN operations for photo retrieval
 - **Incremental Updates** - Only downloads new photos on subsequent runs
 
 ### User Experience
+
 - **Desktop Application** - No terminal commands needed for end users
 - **Web-based Interface** - Familiar photo browsing experience
 - **Offline Capability** - Browse complete collection without internet
@@ -132,6 +155,7 @@ This junction table design enables:
 ## 🛠️ Development Workflow
 
 ### Project Structure
+
 ```
 flickr-local-browser/
 ├── src/                     # Application source code
@@ -148,6 +172,7 @@ flickr-local-browser/
 ```
 
 ### Development Commands
+
 ```bash
 # Setup development environment
 pip install -r requirements-dev.txt
@@ -167,7 +192,7 @@ python src/server.py
 This project demonstrates professional software development capabilities:
 
 - **Database Architecture** - Complex many-to-many relationship design
-- **API Development** - RESTful endpoints with proper error handling  
+- **API Development** - RESTful endpoints with proper error handling
 - **User Interface** - Responsive, intuitive photo browsing experience
 - **OAuth Integration** - Secure authentication with Flickr API
 - **Testing Practices** - Comprehensive test coverage with CI/CD
