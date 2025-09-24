@@ -74,7 +74,7 @@ class DemoDataGenerator:
             )
         """)
         
-        # Create photos table (without album_id for many-to-many)
+        # Create photos table (matching real Flickr metadata structure for tests)
         cursor.execute("""
             CREATE TABLE photos (
                 id TEXT PRIMARY KEY,
@@ -86,8 +86,16 @@ class DemoDataGenerator:
                 date_uploaded TEXT,
                 views INTEGER,
                 tags TEXT,
-                url_original TEXT,
-                url_thumbnail TEXT
+                url TEXT,
+                thumbnail_url TEXT,
+                width INTEGER,
+                height INTEGER,
+                size INTEGER,
+                media_type TEXT,
+                license TEXT,
+                privacy TEXT,
+                safety_level INTEGER,
+                rotation INTEGER
             )
         """)
         
@@ -256,12 +264,14 @@ class DemoDataGenerator:
                 cursor.execute("""
                     INSERT INTO photos 
                     (id, title, description, filename, thumbnail_path, date_taken, 
-                     date_uploaded, views, tags, url_original, url_thumbnail)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                     date_uploaded, views, tags, url, thumbnail_url, width, height, 
+                     size, media_type, license, privacy, safety_level, rotation)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (photo_id, title, description, filename, thumbnail_path,
                       date_taken.isoformat(), date_uploaded.isoformat(), views, tags,
                       f"https://example.com/original/{filename}",
-                      f"https://example.com/thumbnail/{filename}"))
+                      f"https://example.com/thumbnail/{filename}",
+                      1920, 1080, 2048000, 'photo', '0', 'public', 1, 0))
                 
                 # Create album association
                 cursor.execute("""
