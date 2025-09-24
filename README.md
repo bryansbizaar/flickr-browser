@@ -1,6 +1,8 @@
-# 📸 Flickr Local Browser - Portfolio Demo
+# 📸 Flickr Local Browser
 
 A complete desktop application for downloading and browsing Flickr photo collections locally, with advanced search and album management capabilities.
+
+> **Note**: This is a portfolio demonstration version of a custom application originally built for a private client. Personal data has been replaced with realistic demo content to showcase the technical implementation and user experience.
 
 ## 🎯 Quick Demo
 
@@ -127,7 +129,24 @@ flickr-local-browser/
 └── venv/                     # Python virtual environment
 ```
 
-## 🏆 Key Achievements
+## 🏆 Project Background
+
+This application was **custom-developed for a private client** who needed:
+- Complete offline access to their extensive Flickr photo collection
+- Advanced search and organization capabilities beyond Flickr's web interface
+- Privacy and control over their personal photo data
+- Professional-grade photo management tools
+
+The client project involved:
+- **8,000+ real photos** with full metadata extraction
+- **70+ actual photo albums** with complex many-to-many relationships  
+- **OAuth authentication** for accessing private family photos
+- **Database schema migration** to solve photo-album association challenges
+- **Incremental sync capabilities** to download only new photos
+
+**This demo version** replicates the full functionality using generated sample data to protect client privacy while demonstrating the complete technical implementation.
+
+## 🎯 Key Achievements
 
 This project demonstrates:
 
