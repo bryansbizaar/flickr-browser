@@ -3,6 +3,9 @@ requests>=2.31.0
 flask>=2.3.0
 # Note: sqlite3 is built into Python
 
+# Demo data generation
+faker>=24.0.0
+
 # Excel Export Dependencies
 openpyxl>=3.1.0
 Pillow>=10.0.0
