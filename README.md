@@ -16,8 +16,9 @@ python3 PORTFOLIO_LAUNCHER.py
 ```
 
 The demo will automatically:
+
 - ✅ Create 10 realistic photo albums
-- ✅ Generate 400+ demo photos with rich metadata  
+- ✅ Generate 400+ demo photos with rich metadata
 - ✅ Set up a working photo browser interface
 - ✅ Launch directly in your browser
 
@@ -26,15 +27,18 @@ The demo will automatically:
 ### First Time Setup (Portfolio Demo)
 
 1. **Clone & Navigate**
+
    ```bash
    git clone https://github.com/your-username/flickr-local-browser
    cd flickr-local-browser
    ```
 
 2. **Setup Demo Environment**
+
    ```bash
    python3 setup_portfolio_demo.py
    ```
+
    This creates the virtual environment, installs dependencies, and generates demo data.
 
 3. **Launch Portfolio Demo**
@@ -46,6 +50,7 @@ The demo will automatically:
 ### For Real Flickr Data (Production Use)
 
 1. **Setup Environment**
+
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -53,6 +58,7 @@ The demo will automatically:
    ```
 
 2. **Get Flickr API Credentials**
+
    - Go to [Flickr App Garden](https://www.flickr.com/services/apps/create/)
    - Create a new app to get your API key and secret
    - Find your Flickr User ID from your profile URL
@@ -71,14 +77,16 @@ The demo will automatically:
 ## 🔄 Restart Instructions
 
 **Portfolio Demo:**
+
 ```bash
 cd flickr-local-browser
 python3 PORTFOLIO_LAUNCHER.py
 ```
 
 **Production Version:**
+
 ```bash
-cd flickr-local-browser  
+cd flickr-local-browser
 source venv/bin/activate
 python3 START_FLICKR_BROWSER.py
 ```
@@ -104,11 +112,13 @@ The portfolio demo includes:
 ## 🔧 Technical Highlights
 
 - **Database Architecture**: SQLite with proper many-to-many relationships
-- **Backend**: Python Flask with RESTful API endpoints  
+- **Backend**: Python Flask with RESTful API endpoints
 - **Frontend**: Responsive HTML/CSS/JavaScript
 - **Photo Management**: Automatic thumbnail generation and metadata extraction
 - **Search Engine**: Full-text search across titles, descriptions, and tags
 - **Schema Migration**: Solved complex database relationship challenges
+- **Incremental Updates**: Sync only new photos since last download
+- **API Rate Limiting**: Respectful Flickr API usage with proper throttling
 - **Error Handling**: Graceful fallbacks and user-friendly error messages
 
 ## 📁 Project Structure
@@ -116,7 +126,7 @@ The portfolio demo includes:
 ```
 flickr-local-browser/
 ├── PORTFOLIO_LAUNCHER.py      # Demo launcher (portfolio version)
-├── START_FLICKR_BROWSER.py    # Production launcher  
+├── START_FLICKR_BROWSER.py    # Production launcher
 ├── setup_portfolio_demo.py    # Demo setup script
 ├── requirements.txt           # Python dependencies
 ├── src/                       # Application source code
@@ -132,17 +142,20 @@ flickr-local-browser/
 ## 🏆 Project Background
 
 This application was **custom-developed for a private client** who needed:
+
 - Complete offline access to their extensive Flickr photo collection
 - Advanced search and organization capabilities beyond Flickr's web interface
 - Privacy and control over their personal photo data
 - Professional-grade photo management tools
 
 The client project involved:
+
 - **8,000+ real photos** with full metadata extraction
-- **70+ actual photo albums** with complex many-to-many relationships  
+- **70+ actual photo albums** with complex many-to-many relationships
 - **OAuth authentication** for accessing private family photos
 - **Database schema migration** to solve photo-album association challenges
 - **Incremental sync capabilities** to download only new photos
+- **Automated update system** to keep local collection current with Flickr
 
 **This demo version** replicates the full functionality using generated sample data to protect client privacy while demonstrating the complete technical implementation.
 
@@ -152,17 +165,17 @@ This project demonstrates:
 
 - **Complex Problem Solving**: Migrated database from 1:1 to many:many relationships without data loss
 - **API Integration**: OAuth authentication with rate limiting and pagination handling
-- **Full-Stack Development**: Complete application from database to user interface  
+- **Full-Stack Development**: Complete application from database to user interface
 - **User Experience Design**: Intuitive interface that matches familiar photo browsing patterns
 - **Production Ready**: Error handling, logging, and deployment considerations
 - **Performance Optimization**: Efficient queries and thumbnail management for large photo collections
 
 ## 🔗 Links
 
-- **Live Demo**: [View Portfolio Demo](#)
-- **Technical Blog Post**: [How I Solved the Album Association Challenge](#)
-- **GitHub Repository**: [Source Code](https://github.com/your-username/flickr-local-browser)
+- **GitHub Repository**: [Source Code](https://github.com/bryansbizaar/flickr-browser)
+- **Quick Setup**: See [Quick Demo](#-quick-demo) section above
+- **Documentation**: [Complete Usage Guide](USAGE.txt)
 
 ---
 
-*Built with Python, Flask, SQLite, and modern web technologies. Designed for photographers and photo enthusiasts who want complete control over their photo collections.*
+_Built with Python Flask, SQLite database, and modern CSS Grid layouts. Designed for photographers and photo enthusiasts who want complete control over their photo collections._
