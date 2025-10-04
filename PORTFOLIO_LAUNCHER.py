@@ -215,16 +215,12 @@ DEMO_HTML = """
             color: #333;
         }
         .feature-list {
-            list-style: none;
-            padding: 0;
+            list-style: disc;
+            padding-left: 20px;
         }
         .feature-list li {
             padding: 5px 0;
             color: #495057;
-        }
-        .feature-list li::before {
-            content: "✅ ";
-            margin-right: 8px;
         }
         .status {
             padding: 15px;

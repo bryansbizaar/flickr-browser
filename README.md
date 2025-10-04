@@ -26,10 +26,10 @@ python run_tests.py
 
 **Key Testing Features:**
 
-- ✅ Database operations testing (many-to-many photo-album relationships)
-- ✅ REST API endpoint validation
-- ✅ Demo data generation quality assurance
-- ✅ GitHub Actions CI/CD pipeline
+- Database operations testing (many-to-many photo-album relationships)
+- REST API endpoint validation
+- Demo data generation quality assurance
+- GitHub Actions CI/CD pipeline
 
 [📖 View Testing Documentation →](tests/README.md)
 
@@ -46,10 +46,10 @@ python3 PORTFOLIO_LAUNCHER.py
 
 The demo will automatically:
 
-- ✅ Create 10 realistic photo albums
-- ✅ Generate 400+ demo photos with rich metadata
-- ✅ Set up a working photo browser interface
-- ✅ Launch directly in your browser
+- Create 10 realistic photo albums
+- Generate 400+ demo photos with rich metadata
+- Set up a working photo browser interface
+- Launch directly in your browser
 
 ## 🚀 Complete Setup Guide
 
